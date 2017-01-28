@@ -48,7 +48,7 @@
         </p>
         <aside>
           &mdash;
-          1024 bytes
+          <%= size -%> bytes
           &mdash;
           <a href="http://js1k.com/2017-magic/details/NNNN">demo details</a>
           &mdash;
@@ -124,8 +124,7 @@
     </script>
     <script type="demo">
       // THIS IS WHERE YOUR DEMO GOES
-      document.write('see console');
-      console.log('demo here', window.a, b, window.c, window.g, window.d);
+      <%- code -%>
       // END
     </script>
     <script>

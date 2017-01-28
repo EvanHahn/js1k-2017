@@ -4,9 +4,9 @@
     "development": "node development"
   },
   "devDependencies": {
-    "connect": "^3.5.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
     "jscrush": "0.0.0",
-    "serve-static": "^1.11.2",
     "uglify-js": "github:mishoo/UglifyJS2#harmony"
   }
 }
