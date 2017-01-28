@@ -1,6 +1,7 @@
 {
   "private": true,
   "scripts": {
+    "test": "standard",
     "build": "node development/build",
     "development": "node development/server"
   },
@@ -9,6 +10,7 @@
     "express": "^4.14.0",
     "jscrush": "0.0.0",
     "mkdirp": "^0.5.1",
+    "standard": "^8.6.0",
     "uglify-js": "github:mishoo/UglifyJS2#harmony"
   }
 }

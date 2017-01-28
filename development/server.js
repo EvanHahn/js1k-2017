@@ -1,10 +1,8 @@
 const build = require('./build')
 const express = require('express')
-const path = require('path')
 const codeSize = require('./size')
 
 const PORT = process.env.PORT || 3000
-const STATICS = path.resolve(__dirname, 'static')
 
 const app = express()
 
