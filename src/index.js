@@ -4,6 +4,8 @@
  * O = owner (proper name)
  * P = properties
  *
+ * other capital letters are temporary
+ *
  * a = <canvas>
  * b = <body>
  * c = canvas context 2D
@@ -35,6 +37,7 @@ O = [
 ]
 C = [
   'beverage',
+  'brew',
   'drink',
   'elixir',
   'potion',
@@ -51,9 +54,8 @@ P = [
 
 // set up CSS and DOM
 
-b.innerHTML += '<h1 id=t></h1>'
+b.appendChild(t = document.createElement('h1'))
 
-a.style.margin = '0 auto'
 b.style.cssText = 'background:#003;color:#fff;text-align:center'
 t.style.cssText = 'user-select:none'
 
@@ -66,7 +68,19 @@ s = (arr) => arr[Math.floor(Math.random() * (arr.length + 1))]
 r = (result = '', container, owner, adjective, property) => {
   // canvas drawing
 
-  // TODO
+  S = (Math.random() * 100) + 100 // bottle radius
+  M = (Math.random() * S / 2) + 25  // width of the neck
+  H = (Math.random() * 80) + 50  // height of the next
+
+  c.fillStyle = '#ffffff'
+
+  c.beginPath()
+  c.arc(250, 500 - S, S, 0, 7)
+  c.fill()
+
+  c.fillRect(250 - M / 2, 500 - S * 2 - H / 2, M, H)
+
+  c.fillRect(250 - (M / 2) - 10, 500 - S * 2 - H / 2, M + 20, -20)
 
   // text rendering
 
