@@ -17,10 +17,36 @@
 
 // define constants
 
-A = ['vile', 'oily', 'naked', 'pleasant']
-O = ['fartbane', 'evil', 'the dark lord', 'sam', 'wizard', 'witch']
-P = ['elixir', 'potion', 'beverage', 'cure', 'tonic']
-T = ['speed', 'illness', 'blind', 'sleep', 'death', 'beetle']
+A = [
+  'naked',
+  'oily',
+  'pleasant',
+  'vile'
+]
+O = [
+  'dragon',
+  'fartbane',
+  'sam',
+  'the dark lord',
+  'witch',
+  'wizard'
+]
+P = [
+  'beverage',
+  'cure',
+  'drink',
+  'elixir',
+  'potion',
+  'tonic'
+]
+T = [
+  'beetle',
+  'blind',
+  'death',
+  'illness',
+  'sleep',
+  'speed'
+]
 
 // set up CSS and DOM
 
