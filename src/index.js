@@ -6,7 +6,7 @@
  *
  * a = <canvas>
  * b = <body>
- * c = canvas context
+ * c = canvas context 2D
  * d = document
  * r = render function
  * s = function to sample from an array
@@ -64,6 +64,12 @@ s = (arr) => arr[Math.floor(Math.random() * (arr.length + 1))]
 // define render function
 
 r = (result = '', container, owner, adjective, property) => {
+  // canvas drawing
+
+  // TODO
+
+  // text rendering
+
   while (!container) { container = s(C) }
 
   while (!owner && !adjective && !property) {
@@ -97,4 +103,4 @@ r = (result = '', container, owner, adjective, property) => {
 }
 
 r()
-b.onclick = r
+b.onclick = () => r()
