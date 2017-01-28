@@ -70,36 +70,36 @@ P = [
 
 b.appendChild(t = document.createElement('h1'))
 
-b.style.cssText = 'background:#003;color:#fff;text-align:center'
-t.style.cssText = 'user-select:none'
+b.style.background = '#003'
+t.style.cssText = 'user-select:none;color:#fff;text-align:center'
 
 // sample from an array, or return undefined
 
-s = (arr) => arr[Math.floor(Math.random() * (arr.length + 1))]
+s = (arr) => arr[(Math.random() * (arr.length + 1)) | 0]
 
 // define update function
 
 u = (result = '', container, owner, adjective, property) => {
   // canvas drawing
 
-  S = (Math.random() * 100) + 100 // bottle radius
+  S = (Math.random() + 1) * 100 // bottle radius
   M = (Math.random() * S / 2) + 25  // width of the neck
-  H = (Math.random() * 80) + 50  // height of the next
+  H = (Math.random() * 80) + 80  // height of the neck
   K = new Date()  // when was this created?
-  Z = Math.floor(Math.random() * 16777215).toString(16)  // color
+  Z = (Math.random() * 16777215 | 0).toString(16)  // color
   while (Z.length < 6) { Z = '0' + Z }
 
   // text rendering
 
   while (!container) { container = s(C) }
 
-  while (!owner && !adjective && !property) {
-    owner = s(O)
+  owner = s(O)
+  while (!adjective && !property) {
     adjective = s(A)
     property = s(P)
   }
 
-  if (owner) {
+  if (owner && !(adjective && property)) {
     result = owner + "'s "
   }
 
@@ -143,11 +143,10 @@ r = (time) => {
 
   c.fillStyle = '#' + Z
 
-  let jostle = Math.max(0, (2 + (K - new Date()) / 1000) * 0.2)
-  let oscillation = Math.sin(time / 200) * jostle
+  Q = Math.sin(time / 200) * (Math.max(0, (2 + (K - new Date()) / 1000) * 0.2))
 
   c.beginPath()
-  c.arc(250, 500 - S, S * 0.88, oscillation, Math.PI + oscillation)
+  c.arc(250, 500 - S, S * 0.88, Q, Math.PI + Q)
   c.fill()
 
   requestAnimationFrame(r)
