@@ -1,7 +1,7 @@
+const build = require('./build')
 const express = require('express')
-const jscrush = require('jscrush')
-const uglify = require('uglify-js')
 const path = require('path')
+const codeSize = require('./size')
 
 const PORT = process.env.PORT || 3000
 const STATICS = path.resolve(__dirname, 'static')
@@ -11,10 +11,10 @@ const app = express()
 app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  res.render('shim', {
-    code: 'console.log(5)',
-    size: 123
-  })
+  const code = build()
+  const size = codeSize(code)
+
+  res.render('shim', { code, size })
 })
 
 app.listen(PORT, () => {

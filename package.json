@@ -1,12 +1,14 @@
 {
   "private": true,
   "scripts": {
-    "development": "node development"
+    "build": "node development/build",
+    "development": "node development/server"
   },
   "devDependencies": {
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "jscrush": "0.0.0",
+    "mkdirp": "^0.5.1",
     "uglify-js": "github:mishoo/UglifyJS2#harmony"
   }
 }
