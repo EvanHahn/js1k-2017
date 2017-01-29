@@ -22,15 +22,12 @@
 
 A = [
   'delicious',
-  'gross',
-  'naked',
-  'oily',
   'pleasant',
-  'vile'
+  'vile',
+  'dark'
 ]
 O = [
   'dragon',
-  'fartbane',
   'the dark lord',
   'witch',
   'warlock',
@@ -43,6 +40,7 @@ C = [
   'beverage',
   'brew',
   'drink',
+  'mixture',
   'elixir',
   'juice',
   'poison',
@@ -52,7 +50,6 @@ C = [
 ]
 P = [
   'anger',
-  'death',
   'englargement',
   'hair',
   'illness',
@@ -93,8 +90,8 @@ u = (result = '', container, owner, adjective, property) => {
 
   while (!container) { container = s(C) }
 
-  owner = s(O)
   while (!adjective && !property) {
+    owner = s(O)
     adjective = s(A)
     property = s(P)
   }
@@ -103,24 +100,15 @@ u = (result = '', container, owner, adjective, property) => {
     result = owner + "'s "
   }
 
-  if (property) {
-    if (adjective) {
-      property = adjective + ' ' + property
-    }
-
-    if (Math.random() < 0.5) {
-      result += container + ' of ' + property
-    } else {
-      result += property + ' ' + container
-    }
-  } else {
-    if (adjective) {
-      result += adjective + ' '
-    }
-    result += container
+  if (adjective) {
+    result += adjective + ' '
   }
 
-  t.innerHTML = result
+  if (property) {
+    result += property + ' '
+  }
+
+  t.innerHTML = result + container
 }
 
 u()
