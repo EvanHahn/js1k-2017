@@ -3,6 +3,7 @@
   "scripts": {
     "test": "standard",
     "build": "node development/build",
+    "build:demo": "development/build-demo.sh",
     "development": "node development/server"
   },
   "devDependencies": {
